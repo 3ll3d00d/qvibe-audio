@@ -1,0 +1,19 @@
+dist: xenial
+language: python
+cache:
+  pip: true
+python:
+- '3.7'
+env:
+- PIPENV_VERBOSITY=-1
+before_install:
+- pip install pipenv
+install:
+- pipenv sync -d
+deploy:
+  provider: pypi
+  user: 3ll3d00d
+  password:
+    secure: GndJUhvfMfeJfKlbqVdi7WJ+VW4ENs50HNFVhkpF3S5HBDYwVx4MHcM1buIyFoUz0AQgPzt0rYPyRIetsFSuXqjXl1OZ7vJze41NF1mn0MYa7NDJrUIPVS7MpmMuOZSs79BCI12eSBKDhrmwWqHHrDj64IxD8OU3iUI7vQqqP6u3aEWvH6xdg78Gj3IfVJI+9Uoeutbx9VoIztJ3biBsXMZCTp/aJQs1Nfv5qbm4NbxrKDIP+PORUw5JpajswRI6vpQaH+YzbuVsF+cXt7Tx99wdjyScv1H49nAhF0TmEESAoBoJK4iHa7JXjsDqRLWndWqQdMuuj1o24Ca6qRa+tnjP4ADWu2HT8RYiHlo1/z/RsAKx5MxWcOaTdusp+dP4w6ox3h/7MrRw8TcRw37Rk+M71c36nw5SzeTVlB6uoy4ve1f0a4bUefNiyjt0OPwb9GAESivNo+gT8TXhjXntjQLlQi9GIIeSpQqRadZsALddsfwAmZQz0GTXf791PAkAeA1wQHnTLrdibF93yT4U4V7TSaeDCpPRPYeZr4X1SqKXRLrCGws6DIj2e21MLSzZkqBSispbpYajsmje/mN7bO24mr+nxb0R7R69EizsY9bAEBABKeZ+L3cEJ7L3kwyQXsyFI0RUNKSLmc0498zrGSxVCxk9ycUrtxi1xLQFknQ=
+  on:
+    tags: true
